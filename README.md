@@ -1,4 +1,4 @@
-# T-FLIPFLOP-POSEDGE
+#  EXP-09 T-FLIPFLOP-POSEDGE
 
 **AIM:**
 
@@ -28,15 +28,48 @@ From the above characteristic table, we can directly write the next state equati
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Draw the circuit diagram of a positive-edge triggered T Flip-Flop.
+
+2.Assemble the circuit using logic gates or a suitable flip-flop IC.
+
+3.Apply clock pulses and toggle the T input using a switch or logic source.
+
+4.Monitor Q and Q̅ outputs on a logic analyzer or oscilloscope.
+
+5.Verify output toggles only at the rising (positive) edge of the clock.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
+Developed by: MITHUN S 
+
+RegisterNumber: 212224240088
+*/
+```
+module exp9(T,clk,Q,Qbar);
+input T,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin 
+Q=(T&(~Q))|((~T)&Q);
+Qbar=~Q;
+end
+endmodule
+```
+.
 **RTL LOGIC FOR FLIPFLOPS**
+
+![image](https://github.com/user-attachments/assets/60d3ae05-2007-4f51-a5d4-9efc72cf1f50)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![image](https://github.com/user-attachments/assets/8eb3b4f5-8e85-4207-806b-d95acabcab57)
+
+
 **RESULTS**
+
+ To implement T flipflop using verilog and validating their functionality using their functional tables is verified.
