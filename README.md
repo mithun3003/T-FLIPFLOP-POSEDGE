@@ -47,7 +47,7 @@ Developed by: MITHUN S
 RegisterNumber: 212224240088
 */
 ```
-module exp9(T,clk,Q,Qbar);
+module exp09(T,clk,Q,Qbar);
 input T,clk;
 output reg Q;
 output reg Qbar;
